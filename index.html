@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Story</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+		#content{
+		  padding:10%;
+		}
+		
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<audio src="2.mp3"  autoplay="autoplay" loop="loop" preload="auto" type="audio/mp3" id="myaudio" >
+</audio>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="keyword">TO: 卿咕<br /></span>
+				<span class="placeholder"/>卿咕，还好么？<br />
+				<span class="placeholder"/>借鉴小包写情书的方式和你说说话<br />
+				<span class="placeholder"/>惊喜和意外的确从来都不知道哪个先到。<br />
+				<span class="placeholder"/>还记得顾佳说许子言有一个绘画本里面是讲宝宝是在天上选妈妈的，如果宝宝喜欢上了哪个妈妈就会和上帝申请去哪个妈妈的肚子里，上帝就会说"生宝宝是一件很危险的事情，需要想好，因为你们是一个整体是有生死之交的"。宝宝比我们想象的要聪明，他有可能是预感到了有什么危险，就会先悄悄回去。等危险没有了 他肯定就会再回来，然后再一直陪伴。<br />
+				<span class="placeholder"/>我猜我们的琪琪也是这样想的吧~<br />
+				<span class="placeholder"/>现在这个世界竞争太激烈，细胞的世界也不例外。琪琪已经很勇敢很积极的跑到了前面，花了她好多精力找到你。后来可能听到了意外的声音，或许优胜劣汰，她也想保护你就先悄悄走了。<br />
+				<span class="placeholder"/>抱抱。<br />
+				<span class="placeholder"/>卿咕，一起都会好起来的。<br />
+				<span class="placeholder"/>好好休息，把身体养好，就算你已经吃的白胖白胖了，我最多就嘲笑一下嘛。幸福肥我还是允许的。哈哈哈。<br />
+				<span class="placeholder"/>琪琪早晚会回来找你的，不要责备她来的太晚就是。或许她想偷偷监督琪琪粑粑减个肥呢。<br />
+				<span class="placeholder"/>我说过你的重要时刻我都在<br />
+				<span class="keyword"/>一直陪着你的三哥 <br />
+			</div>
+			<div id="loveHeart" style="display:none">
+				<canvas id="garden"></canvas>
+				<div id="words" style="">
+					<div id="messages">
+						ZERO, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Acompany you all the time and ever.<br/>
+						<div class="signature">- T-mac</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	$(function(){
+	
+	document.getElementById("myaudio").muted = false;
+	document.getElementById("myaudio").play()
+	})
+		
+
+                 
+
+
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 11, 15);
+		together.setHours(21);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 50000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
